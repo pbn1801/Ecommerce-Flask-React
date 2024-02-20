@@ -18,7 +18,15 @@ class Product(db.Model):
     name = db.Column(db.String(100), nullable=False)
     price = db.Column(db.Integer(), default=0)
     description = db.Column(db.String(1024))
+    category = db.relationship('Category', back_populates='products')
+    category_name = db.Column(db.String(100), db.ForeignKey('category.name'))
     carts = db.relationship('CartProduct', back_populates='product', cascade='all, delete-orphan')
+
+
+class Category(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False, unique=True)
+    products = db.relationship('Product', back_populates='category')
 
 
 class Cart(db.Model):
