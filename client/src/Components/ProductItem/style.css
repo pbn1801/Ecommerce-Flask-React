@@ -1,13 +1,20 @@
-.product__item-link {
+/* .product__item {
+
+} */
+
+.product__item {
     position: relative;
     display: block;
     background-color: var(--white-color);
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
-    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
     transition: transform linear 0.1s;
     will-change: transform;
     text-decoration: none;
+    color: #000;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
 }
 
 .product__item:hover {
@@ -16,13 +23,23 @@
     cursor: pointer;
 }
 
-.item-product-img {
-    width: 200px;
-    height: 200px;
+.product__item-link {
+    text-decoration: none;
+    color: #000;
+}
+
+.product__item-image img {
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     object-fit: cover;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+}
+
+.product__item-info {
+    padding: 10px;
 }
 
 .name-rate-sold {
@@ -31,17 +48,27 @@
 }
 
 .product__item-name {
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 15px;
+    font-weight: 500;
     color: var(--text-color);
     /* margin: 10px 10px 6px; */
-    margin-top: 16px;
+    margin-top: 8px;
+    margin-bottom: 2px;
     overflow: hidden;
     display: block;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     text-overflow: ellipsis;
+}
+
+.product__item-category {
+    font-size: 12px;
+}
+
+.nameAndCategory {
+    height: 65px;
+    max-height: 65px;
 }
 
 .product__item-img {
@@ -76,8 +103,8 @@
 }
 
 .product__item-price-current {
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: 600;
+    font-size: 18px;
     margin-right: 8px;
 }
 
@@ -91,4 +118,19 @@
     font-size: 12px;
     opacity: 0.8;
     margin-bottom: 2px;
+}
+
+.product__item-button {
+    margin-top: 8px;
+    border-radius: 5px;
+    border-color: var(--border-color);
+    border-width: 1px;
+    font-size: 14px;
+    padding: 4px 8px;
+    margin-left: 10px;
+}
+
+.product__item-button:hover {
+    opacity: 0.8;
+    color: var(--primary-color);
 }

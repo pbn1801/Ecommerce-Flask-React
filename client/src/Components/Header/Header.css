@@ -1,0 +1,57 @@
+.navbar-brand img {
+    width: 60px;
+}
+
+.nav-link:hover i,
+.nav-link:hover span{
+    color: var(--primary-color);
+}
+
+.nav-link {
+    display: flex;
+    align-items: baseline;
+}
+
+.nav-link i {
+    margin-right: 4px;
+}
+
+.nav-item {
+    z-index: 1;
+}
+
+form,
+.form-control {
+    flex: 1;
+}
+
+.logInOut {
+    font-size: 14px;
+    margin-left: 16px !important;
+    position: relative;
+}
+
+.logInOut li:hover {
+    opacity: 0.8;
+}
+
+.login {
+    border-right: 1px solid #c7c7c7;
+}
+
+.login, .logout {
+    padding: 0;
+}
+
+.header-input {
+    border: 1px solid #ccc !important;
+}
+
+.header-input::placeholder {
+    color: #ccc !important;
+    font-size: 16px !important;
+}
+
+.login:hover, .logout:hover {
+    color: var(--primary-color) !important;
+}
