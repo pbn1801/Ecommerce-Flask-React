@@ -6,8 +6,10 @@ import axios from "axios";
 import cart_icon from '../Image/cart_icon.png'
 
 
-const Header = () => {
+const Header = ({ onSearch }) => {
   const { user, setUser, token, setToken} = useContext(UserType)
+  const [searchTerm, setSearchTerm] = useState('');
+
  
   useEffect(() => {
     if (token) {   
@@ -32,15 +34,24 @@ const Header = () => {
     sessionStorage.removeItem("authToken")
     setToken(null)
     setUser(null)
+  }
 
+  const handleInputChange = (event) => {
+    // console.log(event.target.value);
+    setSearchTerm(event.target.value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSearch(searchTerm)
+    // console.log(searchTerm);
   }
 
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container">
-          <a className="navbar-brand" href="#">
-            <b>GoodBook</b>
+          <a className="navbar-brand" href="/">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Wikipedia_logo_Book_of_Records.svg/864px-Wikipedia_logo_Book_of_Records.svg.png" alt="" />
           </a>
           <button
             className="navbar-toggler"
@@ -56,7 +67,10 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mb-2 mb-lg-0 me-2">
               <li className="nav-item">
-                <Link className="nav-link active" to='/'>Trang chủ</Link>
+                <Link className="nav-link active" to='/'>
+                  <i className="fa-solid fa-house"></i>
+                  <span>Trang chủ</span>
+                </Link>
               </li>
               <li className="nav-item dropdown">
                 <a
@@ -92,12 +106,14 @@ const Header = () => {
                 </ul>
               </li>
             </ul>
-            <form className="d-flex" role="search">
+            <form onSubmit={handleSubmit} className="d-flex" role="search">
               <input
-                className="form-control me-1"
+                className="form-control me-1 header-input"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
+                value={searchTerm}
+                onChange={handleInputChange}
               />
               <button className="btn btn-outline-success" type="submit">
                 Search
@@ -116,12 +132,12 @@ const Header = () => {
                 </li>
               </ul>
             ) : (
-              <ul className="navbar-nav mb-2 ms-auto mb-lg-0">
+            <ul className="navbar-nav mb-2 ms-auto mb-lg-0 logInOut">
               <li className="nav-item">
-                  <Link  to='/dangnhap' className="nav-link active">Đăng nhập</Link>
+                  <Link  to='/dangnhap' className="nav-link active login">Đăng nhập</Link>
               </li>
               <li className="nav-item">
-                  <Link className="nav-link active" to='/dangky'>Đăng ký</Link>
+                  <Link className="nav-link active logout" to='/dangky'>Đăng ký</Link>
               </li>
             </ul>
             )}

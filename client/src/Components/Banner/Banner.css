@@ -1,0 +1,28 @@
+.banner-container {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  width: 99%;
+  height: 35vh;
+  margin-bottom: 40px;
+  gap: 20px;
+  /* border: 1px solid #000; */
+  border-radius: 10px;
+}
+
+.banner-image {
+  /* background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center; */
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  flex: 0 0 50%; 
+  transition: transform 1s ease; /* Hiệu ứng chuyển động */
+  object-fit: cover;
+  overflow: hidden;
+}
+
+/* .banner-container:hover .banner-image {
+  transform: translateX(-50%);
+} */

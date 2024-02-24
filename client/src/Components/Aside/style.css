@@ -1,0 +1,100 @@
+.aside {
+    padding: 0 10px;
+    margin-left: 10px;
+}
+
+.aside__heading {
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.aside__heading a {
+    text-decoration: none;
+}
+
+.icon-next {
+    width: 16px;
+}
+
+.aside__heading-home,
+.aside__heading-next-content {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 300;
+    white-space: nowrap;
+}
+
+.aside__heading-home {
+    color: rgb(128, 128, 137);
+}
+
+.aside__heading-home:hover {
+    text-decoration: underline;
+}
+
+.aside__heading-next-content:hover {
+    opacity: 0.8;
+}
+
+.aside__heading-next-content {
+    color: var(--text-color);
+}
+
+.aside__main > div {
+    margin-bottom: 12px;
+}
+
+.aside__main h2 {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+.aside__main a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.aside__main-products-list,
+.aside__main-vendor-list {
+    padding: 0;
+    list-style: none;
+}
+
+.aside__main a,
+.aside__main label,
+.aside__main span {
+    font-size: 13px;
+}
+
+.aside__main label,
+.aside__main input {
+    cursor: pointer;
+}
+
+.aside__main a:hover {
+    color: var(--primary-color);
+}
+
+.aside__main-rating--listStar i {
+    color: #ccc;
+    font-size: 12px;
+}
+
+.aside__main-rating--listStar .star-gold {
+    color: rgb(255, 255, 21);
+}
+
+.aside__main-vendor input {
+    margin-right: 6px;
+}
+
+.aside__main-vendor-item,
+.aside__main-rating--detail {
+    display: flex;
+    align-items: center;
+}
+
+.aside__main-rating--listStar {
+    margin-right: 14px;
+}
