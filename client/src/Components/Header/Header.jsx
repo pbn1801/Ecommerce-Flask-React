@@ -3,13 +3,13 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import { UserType } from "../../UserContext";
 import axios from "axios";
+import cart_icon from '../Image/cart_icon.png'
 
 
 const Header = () => {
   const { user, setUser, token, setToken} = useContext(UserType)
  
   useEffect(() => {
-    console.log(token)
     if (token) {   
       const fetchUser = async () => {
         try {
@@ -112,9 +112,7 @@ const Header = () => {
                     <Link className="nav-link active" to='' onClick={handleLogout}>Đăng xuất</Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">
-                    Giỏ hàng
-                  </a>
+                    <Link to='/giohang' className="nav-link active nav-cart-img"><img src={cart_icon} alt="" /></Link>
                 </li>
               </ul>
             ) : (

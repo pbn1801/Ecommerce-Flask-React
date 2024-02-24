@@ -17,10 +17,16 @@ bcrypt = Bcrypt(app)
 jwt = JWTManager(app)
 
 api = Api(app)
-from app.services import ProductManager, CategoryManager
+from app.services import ProductManager, CategoryManager, SignUp, SignIn, UserManager, AddToCart, RemoveCartItem, CartManager
 #Tao endpoints.
 api.add_resource(ProductManager, '/sanpham')
 api.add_resource(CategoryManager, '/loai')
+api.add_resource(SignUp, '/dangky')
+api.add_resource(SignIn, '/dangnhap')
+api.add_resource(UserManager, '/user')
+api.add_resource(CartManager, '/giohang')
+api.add_resource(AddToCart, '/themsanpham')
+api.add_resource(RemoveCartItem, '/remove_cart_item/<int:cart_item_id>')
 
-from app import routes
+# from app import routes
 
