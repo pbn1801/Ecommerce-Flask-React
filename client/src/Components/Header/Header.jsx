@@ -122,13 +122,13 @@ const Header = ({ onSearch }) => {
             {user ? (
                 <ul className="navbar-nav mb-2 ms-auto mb-lg-0">
                 <li className="nav-item">
-                    <Link  to='' className="nav-link active">{user.name}</Link>
+                    <Link  to='' className="nav-link active" style={{color: "#418000", fontWeight: "bold"}}>{user.name}</Link>
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link active" to='' onClick={handleLogout}>Đăng xuất</Link>
                 </li>
                 <li className="nav-item">
-                    <Link to='/giohang' className="nav-link active nav-cart-img"><img src={cart_icon} alt="" /></Link>
+                    <Link to='/giohang' className="nav-link active nav-cart-img"><img src={cart_icon} alt="" style={{width:"27px"}}/></Link>
                 </li>
               </ul>
             ) : (

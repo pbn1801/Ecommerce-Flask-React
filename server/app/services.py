@@ -21,6 +21,13 @@ class ProductManager(Resource):
 
     def post(self):
         try:
+            new_product_name = request.json['name']
+
+            product_exist = Product.query.filter_by(name=new_product_name).first()
+
+            if product_exist:
+                return jsonify({"error": "Tên sản phẩm đã tồn tại! Vui lòng chọn tên khác"})
+
             new_product = Product(
                 image = request.json['image'],
                 name = request.json['name'],
@@ -42,6 +49,30 @@ class ProductManager(Resource):
             })
         except Exception as e:
             return jsonify({"error": str(e)})
+
+class ProductUpdateDelete(Resource):
+    def put(self, product_id):
+        product = Product.query.get(product_id)
+
+        product.image = request.json['image']
+        product.name = request.json['name']
+        product.price = request.json['price']
+        product.description = request.json['description']
+        product.category_name = request.json['category']
+
+        db.session.commit()
+
+        return jsonify({"message": "Sửa đổi sản phẩm thành công"})
+
+    def delete(self, product_id):
+        product = Product.query.get(product_id)
+
+        db.session.delete(product)
+        db.session.commit()
+
+        return jsonify({"message": "Xóa sản phẩm thành công"})
+
+
 
 
 class CategoryManager(Resource):
@@ -187,6 +218,12 @@ class RemoveCartItem(Resource):
     def delete(self, cart_item_id):
         user_id = get_jwt_identity()
         cart_item = CartProduct.query.get(cart_item_id)
+        
+        if cart_item is None:
+            return jsonify({"error": "Mục giỏ hàng không tồn tại"}), 404
+
+        if cart_item.cart.user_id != user_id:
+            return jsonify({"error": "Bạn không có quyền xóa mục giỏ hàng này"}), 403
 
         db.session.delete(cart_item)
         db.session.commit()

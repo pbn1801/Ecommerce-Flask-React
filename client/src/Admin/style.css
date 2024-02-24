@@ -1,0 +1,181 @@
+.admin {
+    text-align: center;
+}
+
+.addprod {
+    border-radius: 5px;
+    border: none;
+    background-color: var(--primary-color);
+    color: #000;
+    font-weight: 600;
+    padding: 8px;
+    margin-bottom: 8px;
+    float: left;
+}
+
+.addprod:hover {
+    opacity: 0.9;
+    transform: scale(1.01);
+}
+
+.admin-table {
+    width: 100%;
+}
+
+.admin-table th {
+    border: 1px solid #000;
+    background-color: var(--primary-color);
+    font-size: 18px;
+    padding: 4px;
+}
+
+.col-boby-id,
+.col-head-id {
+    width: 3%;
+}
+
+.col-body-img,
+.col-head-img {
+    width: 25%;
+}
+
+.col-body-img img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.col-head-title,
+.col-body-title {
+    width: 20%;
+}
+
+.col-head-price,
+.col-body-price {
+    width: 7%;
+}
+
+.col-head-desc,
+.col-body-desc {
+    width: 35%;
+}
+
+.col-body-category,
+.col-head-category {
+    width: 10%;
+}
+
+.admin-table tbody tr {
+    height: 200px;
+    max-height: 200px;
+}
+
+.col-body td {
+    padding: 25px;
+    border: 1px solid #000;
+    height: 200px;
+    max-height: 200px;
+}
+
+.col-body-id {
+    font-weight: 500;
+}
+
+.btn-repair,
+.btn-delete {
+    width: 60px;
+    padding: 4px 10px;
+    margin: 6px;
+    border-radius: 5px;
+    font-weight: 500;
+    border: none;
+}
+
+.btn-repair {
+    background-color: #d7d5d5;
+}
+
+.btn-delete {
+    background-color: rgb(255, 69, 69);
+    color: #fff;
+}
+
+.btn-repair:hover,
+.btn-delete:hover {
+    transform: scale(1.05);
+}
+
+.col-body-title,
+.col-body-desc {
+    text-align: justify;
+}
+
+.col-body-price {
+    font-weight: 500;
+}
+
+
+/* Add product form */
+.bg-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0, 0.3);
+}
+
+.edit-product-form,
+.add-product-form {
+    width: 500px;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 30px;
+    background-color: #fff;
+    text-align: left;
+    animation: modalFadeIn .5s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-75%);
+    } to {
+        opacity: 1;
+        transform: translateY(-50%);
+    }
+}
+
+.description {
+    height: 100px;
+}
+
+.close {
+    padding: 4px 10px;
+    border-radius: 5px;
+    background-color: #ccc;
+    border: none;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+.close:hover {
+    opacity: .8;
+    transform: scale(1.01);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.01);
+}

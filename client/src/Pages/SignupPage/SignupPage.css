@@ -1,11 +1,63 @@
-.signup-form {
-    margin-top: 100px;
-    width: 500px;
+.overlay {
+    background-size: cover; 
+    background-position: center; 
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: 1;
+    background-color: #fff;
 }
 
-.form-group {
-    margin-bottom: 30px;
+.signup-form {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    width: 500px;
+    padding: 16px;
+    border-radius: 5px;
+    animation: fadeIn ease .5s;
+    /* color: #fff; */
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    background-color: #fff;
 }
-.form-group label {
-    margin-bottom: 10px;
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-70%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-50%);
+    }
+}
+
+.signup-form h2 {
+    text-align: center;
+    margin-bottom: 28px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.btnSignUp {
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.signin-nav {
+    font-size: 14px;
+}
+
+.btnSignUp {
+    border: none;
+    background-color: var(--primary-color);
+}
+
+.btnSignUp:hover {
+    opacity: .8;
+    background-color: var(--primary-color);
+}
+
+.signIn-text {
+    color: var(--primary-color);
 }

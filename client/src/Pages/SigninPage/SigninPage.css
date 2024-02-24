@@ -1,11 +1,81 @@
 .signin-form {
-    margin-top: 100px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
     width: 500px;
+    background-color: #f4fef6;
+    padding: 16px;
+    border-radius: 10px;
+    animation: fadeIn ease .5s;
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-70%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(-50%);
+    }
+  }
+
+.signin-form h2 {
+    text-align: center;
+    margin-bottom: 28px;
+    font-size: 24px;
+    font-weight: 600;
 }
 
 .form-group {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .form-group label {
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.overlay {
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-color: #fff;
+    z-index: 1;
+}
+
+.signup-nav p {
+    margin-bottom: 0;
+}
+
+.signup{
+    text-decoration: underline;
+    color: var(--primary-color);
+}
+
+.form-control {
+    background-color: #f4fbf4;
+    border-radius: 4px;
+}
+
+.signup-nav,
+.forgot-passowrd,
+.btnSingIn {
+    font-size: 14px;
     margin-bottom: 10px;
+}
+
+.forgot-passowrd a {
+    color: var(--primary-color);
+}
+
+.btnSingIn {
+    font-weight: 600;
+    background-color: var(--primary-color);
+    border: none;
+}
+
+.btnSingIn:hover {
+    background-color: var(--primary-color);
+    opacity: .8;
 }

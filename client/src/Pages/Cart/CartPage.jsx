@@ -17,6 +17,7 @@ const CartPage = () => {
       })
 
       const updatedCart = cartItems.filter((item) => item.product.id !== productId);
+      console.log('Updated Cart:', updatedCart);
       setCartItems(updatedCart);
     } catch(error) {
       console.log("Lỗi khi xóa sản phẩm", error)

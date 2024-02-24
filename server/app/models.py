@@ -45,3 +45,4 @@ class CartProduct(db.Model):
     product = db.relationship('Product', back_populates='carts')
     quantity = db.Column(db.Integer, default=0)
 
+
